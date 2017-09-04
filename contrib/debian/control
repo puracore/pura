@@ -1,0 +1,68 @@
+Source: pura
+Section: utils
+Priority: optional
+Maintainer: 
+Uploaders: 
+Build-Depends: debhelper,
+ devscripts,
+ automake,
+ libtool,
+ bash-completion,
+ libdb4.8++-dev,
+ libssl-dev,
+ pkg-config,
+ libevent-dev,
+ libboost-system1.48-dev | libboost-system-dev (>> 1.35),
+ libboost-filesystem1.48-dev | libboost-filesystem-dev (>> 1.35),
+ libboost-program-options1.48-dev | libboost-program-options-dev (>> 1.35),
+ libboost-thread1.48-dev | libboost-thread-dev (>> 1.35),
+ libboost-test1.48-dev | libboost-test-dev (>> 1.35),
+ libboost-chrono1.48-dev | libboost-chrono-dev (>> 1.35),
+ qt4-qmake,
+ libqt4-dev,
+ libqrencode-dev,
+ libprotobuf-dev, protobuf-compiler,
+ python
+Standards-Version: 3.9.2
+Homepage: https://www.pura.one/
+Vcs-Git: git://github.com/purapay/pura.git
+Vcs-Browser: https://github.com/purapay/pura
+
+Package: purad
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer network based digital currency - daemon
+ Pura is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Pura uses peer-to-peer
+ technology to operate with no central authority: managing transactions
+ and issuing money are carried out collectively by the network. Pura Core
+ is the name of the open source software which enables the use of this currency.
+ .
+ This package provides the daemon, purad, and the CLI tool
+ pura-cli to interact with the daemon.
+
+Package: pura-qt
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer network based digital currency - Qt GUI
+ Pura is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Pura uses peer-to-peer
+ technology to operate with no central authority: managing transactions
+ and issuing money are carried out collectively by the network. Pura Core
+ is the name of the open source software which enables the use of this currency.
+ .
+ This package provides Pura-Qt, a GUI for Pura based on Qt.
+
+Package: pura-tx
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: peer-to-peer digital currency - standalone transaction tool
+ Pura is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Pura uses peer-to-peer
+ technology to operate with no central authority: managing transactions
+ and issuing money are carried out collectively by the network. Pura Core
+ is the name of the open source software which enables the use of this currency.
+ .
+ This package provides pura-tx, a command-line transaction creation
+ tool which can be used without a pura daemon.  Some means of
+ exchanging minimal transaction data with peers is still required.

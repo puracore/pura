@@ -1,0 +1,6 @@
+usr/local/bin/pura-qt usr/bin
+share/pixmaps/pura32.xpm usr/share/pixmaps
+share/pixmaps/pura16.xpm usr/share/pixmaps
+share/pixmaps/pura128.png usr/share/pixmaps
+debian/pura-qt.desktop usr/share/applications
+debian/pura-qt.protocol usr/share/kde4/services/

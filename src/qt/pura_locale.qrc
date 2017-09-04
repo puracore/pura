@@ -1,0 +1,20 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/pura_bg.qm</file>
+        <file alias="de">locale/pura_de.qm</file>
+        <file alias="en">locale/pura_en.qm</file>
+        <file alias="es">locale/pura_es.qm</file>
+        <file alias="fi">locale/pura_fi.qm</file>
+        <file alias="fr">locale/pura_fr.qm</file>
+        <file alias="it">locale/pura_it.qm</file>
+        <file alias="ja">locale/pura_ja.qm</file>
+        <file alias="pl">locale/pura_pl.qm</file>
+        <file alias="pt">locale/pura_pt.qm</file>
+        <file alias="ru">locale/pura_ru.qm</file>
+        <file alias="sk">locale/pura_sk.qm</file>
+        <file alias="sv">locale/pura_sv.qm</file>
+        <file alias="vi">locale/pura_vi.qm</file>
+        <file alias="zh_CN">locale/pura_zh_CN.qm</file>
+        <file alias="zh_TW">locale/pura_zh_TW.qm</file>
+    </qresource>
+</RCC>

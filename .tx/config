@@ -1,0 +1,7 @@
+[main]
+host = https://www.transifex.com
+
+[pura.qt-translation-010]
+file_filter = src/qt/locale/pura_<lang>.ts
+source_file = src/qt/locale/pura_en.ts
+source_lang = en
