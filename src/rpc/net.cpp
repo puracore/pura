@@ -200,8 +200,8 @@ UniValue addnode(const UniValue& params, bool fHelp)
             "1. \"node\"     (string, required) The node (see getpeerinfo for nodes)\n"
             "2. \"command\"  (string, required) 'add' to add a node to the list, 'remove' to remove a node from the list, 'onetry' to try a connection to the node once\n"
             "\nExamples:\n"
-            + HelpExampleCli("addnode", "\"192.168.0.6:44444\" \"onetry\"")
-            + HelpExampleRpc("addnode", "\"192.168.0.6:44444\", \"onetry\"")
+            + HelpExampleCli("addnode", "\"192.168.0.6:9887\" \"onetry\"")
+            + HelpExampleRpc("addnode", "\"192.168.0.6:9887\", \"onetry\"")
         );
 
     if(!g_connman)
@@ -270,7 +270,7 @@ UniValue getaddednodeinfo(const UniValue& params, bool fHelp)
             "    \"connected\" : true|false,          (boolean) If connected\n"
             "    \"addresses\" : [                    (list of objects) Only when connected = true\n"
             "       {\n"
-            "         \"address\" : \"192.168.0.201:44444\",  (string) The pura server IP and port we're connected to\n"
+            "         \"address\" : \"192.168.0.201:9887\",  (string) The yrmix server IP and port we're connected to\n"
             "         \"connected\" : \"outbound\"           (string) connection, inbound or outbound\n"
             "       }\n"
             "     ]\n"

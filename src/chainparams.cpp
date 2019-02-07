@@ -94,8 +94,8 @@ static void MineGenesis(CBlockHeader& genesisBlock, const uint256& powLimit, boo
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "7nm ASICs Will Bring Bitcoin Mining to a Whole New Level";
-    const CScript genesisOutputScript = CScript() << ParseHex("0414839e50709bc5f13b2ae05c57a734715d04059c92d0c9ab7e92dc3c5708fd83bc4c6d6d75335f32c321b3f80ee3105f211851a2b4f564bdb628e5ca8284bea6") << OP_CHECKSIG;
+    const char* pszTimestamp = "Wired 09 / Jan / 2018 Great project starts its work: Now we create yrmix";
+    const CScript genesisOutputScript = CScript() << ParseHex("0475207f7e825d6c98b5b1e3013d5308c887d1fe3b6511d8fa15031e51d517239bb85f2178593c69fd7463105bd8d229b57f7ce0303156a90cf798b5e0b238b853") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -164,13 +164,13 @@ public:
         pchMessageStart[1] = 0x97;
         pchMessageStart[2] = 0xc5;
         pchMessageStart[3] = 0x43; 
-        vAlertPubKey = ParseHex("0439ee157cbec6ebdceee996fb9aa44b2777aa3f04f576833ef6cb40f4efa7f18f0396b73dba4feecb1b0a06b636cc5f5e30662878f75c4486404f4208102122c4");
-        nDefaultPort = 44444;
+        vAlertPubKey = ParseHex("0428ae7bb0dc7b6e0fa1f0dbcbd02353db48ffd2560b6086a0c43aab36ea9de6e4ef46dee610082983b057184f4d5d3776dc51c9ec843ced5687fe2fdfd4ebf452");
+        nDefaultPort = 9887;
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
         nPruneAfterHeight = 100000;
 	startNewChain = false;
 
-        genesis = CreateGenesisBlock( 1505245565, 1006685, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock( 1547064360, 714708, 0x1e0ffff0, 1, 50 * COIN);
 	if(startNewChain == true) { MineGenesis(genesis, consensus.powLimit, true); }
 
         consensus.hashGenesisBlock = genesis.GetHash();
@@ -185,10 +185,10 @@ public:
         vSeeds.push_back(CDNSSeedData("", ""));
         vSeeds.push_back(CDNSSeedData("", ""));
 
-        // Pura addresses start with 'P'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,55);
-        // Pura script addresses start with '7'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,16);
+        // Pura addresses start with 'Y'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,78);
+        // Pura script addresses start with '9'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,20);
         // Pura private keys start with '7' or 'P'
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,150);
         // Pura BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
@@ -209,15 +209,14 @@ public:
 
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
-        strSporkPubKey = "045bdfa9a40361e6a362af49c1e5348560f23282c0f744014aae974e8747e39cc9503fe531bd8d74ef04880d92d100f32353cb766456ff6dc8390a9a473f2c25e7";
-        strMasternodePaymentsPubKey = "045bdfa9a40361e6a362af49c1e5348560f23282c0f744014aae974e8747e39cc9503fe531bd8d74ef04880d92d100f32353cb766456ff6dc8390a9a473f2c25e7";
+        strSporkPubKey = "040c19ca1d6c03f0a049f67653455b9529d45b03e40682629e1bf959521040fbb64fd120b1a7368ead02cc0fec587f163e38f4833099d014711b39ad6c88949072";
+        strMasternodePaymentsPubKey = "040c19ca1d6c03f0a049f67653455b9529d45b03e40682629e1bf959521040fbb64fd120b1a7368ead02cc0fec587f163e38f4833099d014711b39ad6c88949072";
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (     0, uint256S("0x0000059f97335f77b9fd3c1a22f584fb01ea94e22fed7c02f3e54c0049faadd8"))
-            (   100, uint256S("0x00000027d61ab61b7ad486d45f3c9a55b43b177f5440431c05654c89fa08ec2b")),
-            1506038884, // * UNIX timestamp of last checkpoint block
-            101,        // * total number of transactions between genesis and last checkpoint
+            (     0, uint256S("0x00000ee25744002816cdfd73879ef75e0373ab6e39443c77a1ea6d34ddf40849")),
+            1547064360, // * UNIX timestamp of last checkpoint block
+            0,        // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             675         // * estimated number of transactions per day after checkpoint
         };
@@ -275,13 +274,13 @@ public:
         pchMessageStart[1] = 0x96;
         pchMessageStart[2] = 0xc5;
         pchMessageStart[3] = 0x42; 
-        vAlertPubKey = ParseHex("0414839e50709bc5f13b2ae05c57a734715d04059c92d0c9ab7e92dc3c5708fd83bc4c6d6d75335f32c321b3f80ee3105f211851a2b4f564bdb628e5ca8284bea6");
-        nDefaultPort = 44443;
+        vAlertPubKey = ParseHex("04297a4dfb4506c2a38f1080ff0f57a669a3fbc7e8e3e70def2fbf2cf48e443ab0f66dbdf03a1ce8db3fc4a6fcfdbc57e37fcb2c8ff2ed55e00c666beb62ecb3da");
+        nDefaultPort = 19887;
         nMaxTipAge = 0x7fffffff; // allow mining on top of old blocks for testnet
         nPruneAfterHeight = 1000;
 	startNewChain = false;
 
-        genesis = CreateGenesisBlock(1505245755, 1761144, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1547064361, 1407488, 0x1e0ffff0, 1, 50 * COIN);
         if(startNewChain == true) {
             MineGenesis(genesis, consensus.powLimit, true);
 	}
@@ -289,7 +288,7 @@ public:
         consensus.hashGenesisBlock = genesis.GetHash();
 
 	if(!startNewChain) {
-        assert(consensus.hashGenesisBlock == uint256S("0x00000622dfb4d5a2d83c43d60495419c82a0ee6659f210f5e8a0ed4ae7b40c59"));
+        assert(consensus.hashGenesisBlock == uint256S("0x0000013f50d5fd28e5929c550efed620ee89f571a25a6cbe009c24c6fea49a43"));
         assert(genesis.hashMerkleRoot == uint256S("0x368908bd515eeb857ac5fe1679c429d8ad1582f975a6be0b4efb6646c6837d35"));
 	}
 
@@ -298,10 +297,10 @@ public:
         vSeeds.push_back(CDNSSeedData("",  ""));
         vSeeds.push_back(CDNSSeedData("", ""));
 
-        // Testnet Pura addresses start with 'y'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Testnet Pura script addresses start with '8' or '9'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
+        // Testnet Pura addresses start with 'w'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,135);
+        // Testnet Pura script addresses start with '7' or '8'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,17);
         // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
         // Testnet Pura BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
@@ -322,11 +321,11 @@ public:
 
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
-        strSporkPubKey = "045bdfa9a40361e6a362af49c1e5348560f23282c0f744014aae974e8747e39cc9503fe531bd8d74ef04880d92d100f32353cb766456ff6dc8390a9a473f2c25e7";
+        strSporkPubKey = "043af824e6af7baff88b3644efc250fe124cb8ffb8d945ae98bc189169c48e3c26698aa6cfb5b21c8a4fb61b745213720a6256bc67498400067cec1e7cdbdfa1b6";
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (    0, uint256S("0x00000622dfb4d5a2d83c43d60495419c82a0ee6659f210f5e8a0ed4ae7b40c59")),
+            (    0, uint256S("0x0000013f50d5fd28e5929c550efed620ee89f571a25a6cbe009c24c6fea49a43")),
             1505245755, // * UNIX timestamp of last checkpoint block
             0,          // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
@@ -386,11 +385,11 @@ public:
         pchMessageStart[2] = 0xc3;
         pchMessageStart[3] = 0x41; 
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
-        nDefaultPort = 44442;
+        nDefaultPort = 19887;
         nPruneAfterHeight = 1000;
 	startNewChain = false;
 
-        genesis = CreateGenesisBlock(1505246014, 2, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1547064360, 0, 0x207fffff, 1, 50 * COIN);
         if(startNewChain == true) {
         	MineGenesis(genesis, consensus.powLimit, true);
 	}
@@ -415,7 +414,7 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0x77383bab0ca55efa081834d1913d01a77764633e77979955a5f2be42dc6d7b19")),
+            ( 0, uint256S("0x215133e220d2741e67f63b0c19ab9a3f2ddc283d84785d49fc028282562d4230")),
             1505246014,
             0,
             0

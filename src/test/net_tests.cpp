@@ -2,7 +2,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 #include "addrman.h"
-#include "test/test_pura.h"
+#include "test/test_yrmix.h"
 #include <string>
 #include <boost/test/unit_test.hpp>
 #include "hash.h"
@@ -75,8 +75,8 @@ BOOST_AUTO_TEST_CASE(caddrdb_read)
     addrmanUncorrupted.MakeDeterministic();
 
     CService addr1 = CService("250.7.1.1", 8333);
-    CService addr2 = CService("250.7.2.2", 44444);
-    CService addr3 = CService("250.7.3.3", 44444);
+    CService addr2 = CService("250.7.2.2", 9887);
+    CService addr3 = CService("250.7.3.3", 9887);
 
     // Add three addresses to new table.
     addrmanUncorrupted.Add(CAddress(addr1, NODE_NONE), CService("252.5.1.1", 8333));
