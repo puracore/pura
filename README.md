@@ -1,7 +1,7 @@
 Pura Core staging tree 1.0.0
 ===============================
 
-https://pura.one
+https://mypura.io/
 
 
 What is Pura ?
@@ -14,7 +14,7 @@ are carried out collectively by the network. Pura Core is the name of the open
 source software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Dash Core software, see https://pura.one.
+the Dash Core software, see https://mypura.io.
 
 
 License
